@@ -19,3 +19,9 @@ class ExceptionFieldNotFound(HTTPException):
     def get_headers(self, environ=None):
         return [('Content-Type', 'application/json')]
 
+class ExceptionFieldValidation(ExceptionFieldNotFound):
+    def __init__(self, field, description=None):
+        self.response = None
+        self.description = 'Invalid data type for field "%s"' % field
+        if description:
+            self.description += ', "%s"' % description
