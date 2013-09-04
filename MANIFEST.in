@@ -1,0 +1,4 @@
+graft flask_simplerest
+global-exclude *.pyc
+include README.md
+

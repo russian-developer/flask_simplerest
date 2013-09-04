@@ -1,0 +1,3 @@
+dist/
+flask_simplerest.egg-info/
+*.pyc
