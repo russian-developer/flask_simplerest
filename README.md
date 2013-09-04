@@ -1,4 +1,4 @@
-django-statistic
+Flask simple REST
 =========================
 
 A Flask extansion for simple ReSTful api generation

@@ -10,7 +10,7 @@ class TestCommand(test):
 
 setup(
     name='flask_simplerest',
-    version='1.0',
+    version='1.0.1',
     description='A Flask extension for easy ReSTful API generation',
     long_description=open('README.md').read(),
     author='Constantin Slednev',
