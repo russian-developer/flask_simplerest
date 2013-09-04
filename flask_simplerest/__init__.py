@@ -22,6 +22,7 @@ class SimpleRestApp(object):
                 for key, value in fields.items():
                     if isinstance(value, type):
                         value = value()
+                    value.field_name = key
                     if value.required:
                         _required_fields.append(key)
                     else:
