@@ -43,6 +43,7 @@ class SimpleRestApp(object):
 
 class SimpleRestResource(object):
     def __init__(self, rest_instance, prefix=''):
+        self.app = rest_instance.app
         for method_name, instance in inspect.getmembers(self):
             if method_name.startswith('__'):
                 continue
