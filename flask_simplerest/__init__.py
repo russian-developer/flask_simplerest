@@ -44,12 +44,12 @@ class SimpleRestApp(object):
 
 class SimpleRestResource(object):
     def __init__(self, rest_instance, prefix=''):
-        self.app = rest_instance.app
+        self._app = rest_instance.app
         for method_name, instance in inspect.getmembers(self):
-            if method_name.startswith('__'):
+            if method_name.startswith('_'):
                 continue
             if not hasattr(instance, 'path') or not hasattr(instance, 'method'):
-                raise Exception('You must use @rest(path, method) for all method of your cls')
+                raise Exception('You must use @rest(path, method) for all method of your cls', instance)
             setattr(self, method_name, rest_instance(prefix + instance.path, instance.method)(instance))
 
 def rest(path, method):
